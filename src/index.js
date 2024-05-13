@@ -4,6 +4,9 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 import GlobalFont from "./styles/fonts";
 import GlobalStyle from "./styles/globalStyle";
+import { Header } from "components/Header";
+import styled from "styled-components";
+import { SummaryPanel } from "components/SummaryPanel";
 
 const client = new ApolloClient({
   uri: "https://spacex-production.up.railway.app/",
@@ -18,15 +21,20 @@ createRoot(document.getElementById("root")).render(
   </ApolloProvider>,
 );
 
+const MainSection = styled.div`
+  padding: 2em 1em;
+`;
+
+const DataSection = styled.div`
+`;
+
 function App() {
   return (
-    <>
-      <h1>
-        Hello
-        <span role="img" aria-label="wave">
-          👋🏻
-        </span>
-      </h1>
-    </>
+    <MainSection>
+      <Header />
+      <DataSection>
+        <SummaryPanel />
+      </DataSection>
+    </MainSection>
   );
 }
