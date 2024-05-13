@@ -1,15 +1,11 @@
 import React from "react";
-import { TextRegular, TitleBig } from "components/common";
-import styled from "styled-components";
-
-const Narrative = styled(TextRegular)`
-  font-size: 20px;
-`;
+import { TitleExtraBold } from "components/common";
+import { Narrative } from "./ui";
 
 export const Header = () => {
-  return(
+  return (
     <>
-      <TitleBig>Dashboard</TitleBig>
+      <TitleExtraBold>Dashboard</TitleExtraBold>
       <Narrative>Welcome back, here's what's happening with SpaceX today. Below is an overview of the fleets, all launches past and upcoming.</Narrative>
     </>
   );

@@ -7,6 +7,7 @@ import GlobalStyle from "./styles/globalStyle";
 import { Header } from "components/Header";
 import styled from "styled-components";
 import { SummaryPanel } from "components/SummaryPanel";
+import { LaunchesChart } from "components/LaunchesChart";
 
 const client = new ApolloClient({
   uri: "https://spacex-production.up.railway.app/",
@@ -34,6 +35,7 @@ function App() {
       <Header />
       <DataSection>
         <SummaryPanel />
+        <LaunchesChart />
       </DataSection>
     </MainSection>
   );

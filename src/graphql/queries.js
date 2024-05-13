@@ -16,3 +16,19 @@ export const GET_SUMMARY_DATA = gql`
     }
   }
 `;
+
+export const GET_LAUNCHES = gql`
+  query GetLaunches {
+    launches {
+      id
+      launch_year
+      upcoming
+      launch_success
+      rocket {
+        rocket {
+          cost_per_launch
+        }
+      }
+    }
+  }
+`;

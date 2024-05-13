@@ -1,3 +1,4 @@
+import { ShadowedContainer } from 'components/common';
 import styled from 'styled-components';
 
 export const SummaryContainer = styled.section`
@@ -9,10 +10,7 @@ export const SummaryContainer = styled.section`
   flex-wrap: nowrap;
 `;
 
-export const Item = styled.article`
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgb(107 114 128 / 50%);
+export const Item = styled(ShadowedContainer)`
   min-width: 174px;
   margin-right: 1em;
   &:last-child {
