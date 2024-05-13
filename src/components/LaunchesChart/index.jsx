@@ -5,7 +5,7 @@ import { GET_LAUNCHES } from 'graphql/queries';
 import { Loading } from 'components/common/Loading';
 import { Error } from 'components/common/Error';
 import { TextRegular, TitleSemiBold } from 'components/common';
-import { ChartSection, DataContainer, DescriptionSection, MainContainer, SummarySection, TotalLaunches } from './ui';
+import { ChartMain, ChartSection, DataContainer, DescriptionSection, SummarySection, TotalLaunches } from './ui';
 import { colors } from 'styles/colors';
 import { SummaryItem } from './SummaryItem';
 import { formatCost } from 'components/helpers/utils';
@@ -52,7 +52,7 @@ export const LaunchesChart = () => {
   if (error) return <Error dataName="launches" />;
 
   return (
-    <MainContainer>
+    <ChartMain>
       <DataContainer>
         <DescriptionSection>
           <TitleSemiBold>Launches</TitleSemiBold>
@@ -76,6 +76,6 @@ export const LaunchesChart = () => {
         <SummaryItem title="Average cost" value={avarageCostFormatted} />
         <SummaryItem title="Failures" value={failures} />
       </SummarySection>
-    </MainContainer>
+    </ChartMain>
   );
 }

@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

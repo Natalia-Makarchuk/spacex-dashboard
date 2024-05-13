@@ -2,7 +2,7 @@ import { BorderedContainer, ShadowedContainer, TitleExtraBold, TitleSemiBold } f
 import styled from 'styled-components';
 import { colors } from 'styles/colors';
 
-export const MainContainer = styled(ShadowedContainer)`
+export const ChartMain = styled(ShadowedContainer)`
   margin-top: 20px
 `;
 
@@ -11,7 +11,7 @@ export const DataContainer = styled.div`
   flex-direction: row;
   width: 100%;
   padding: 20px;
-  gap: 10px;
+  gap: 1em;
 
   @media (max-width: 1024px) {
     flex-direction: column;

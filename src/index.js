@@ -8,10 +8,25 @@ import { Header } from "components/Header";
 import styled from "styled-components";
 import { SummaryPanel } from "components/SummaryPanel";
 import { LaunchesChart } from "components/LaunchesChart";
+import { LaunchesHistory } from "components/LaunchesHistory";
 
 const client = new ApolloClient({
   uri: "https://spacex-production.up.railway.app/",
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          launchesPast: {
+            keyArgs: false,
+  
+            merge(existing = [], incoming) {
+              return [...existing, ...incoming];
+            },
+          }
+        }
+      }
+    }
+  }),
 });
 
 createRoot(document.getElementById("root")).render(
@@ -24,19 +39,36 @@ createRoot(document.getElementById("root")).render(
 
 const MainSection = styled.div`
   padding: 2em 1em;
+  height: 100vh; 
 `;
 
-const DataSection = styled.div`
+const DashboardSection = styled.div`
+  display: grid;
+  grid-template-columns: 69% 30%;
+  height: auto;
+  grid-gap: 1%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+  }
 `;
+
+export const LaunchesChartSection = styled.div`
+  }
+`;
+
 
 function App() {
   return (
     <MainSection>
       <Header />
-      <DataSection>
-        <SummaryPanel />
-        <LaunchesChart />
-      </DataSection>
+      <DashboardSection>
+        <LaunchesChartSection>
+          <SummaryPanel />
+          <LaunchesChart />
+        </LaunchesChartSection>
+          <LaunchesHistory />
+      </DashboardSection>
     </MainSection>
   );
 }

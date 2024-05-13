@@ -32,3 +32,13 @@ export const GET_LAUNCHES = gql`
     }
   }
 `;
+
+export const GET_PAST_LAUNCHES = gql`
+  query ExampleQuery($offset: Int, $limit: Int) {
+    launchesPast(offset: $offset, limit: $limit) {
+      id
+      launch_date_utc
+      mission_name
+    }
+  }
+`;
